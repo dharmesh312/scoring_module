@@ -50,9 +50,9 @@ if __name__ == '__main__':
         atp_ranking = -1,
         credits_needed = -1
     )
-    players = [p1, p2]
+    players = [p1, p2, p3, p4]
     game = Game(players)
-    game.run_round()
+    while len(game.current_players_in_game) != 1:
+        game.run_round()
     write_players_score (game)
 
-    log.info(f"All players : {game.players}")
