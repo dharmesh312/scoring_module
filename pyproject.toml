@@ -6,6 +6,7 @@ authors = ["dharmesh-doxel <81106621+dharmesh-doxel@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+BaseModel = "^20190604.1625"
 
 [tool.poetry.dev-dependencies]
 
