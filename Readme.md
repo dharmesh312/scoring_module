@@ -25,3 +25,14 @@ p1 = Player(
     )
 ```
 Add a object like this to add a player in `main.py.`
+5. As of now the reward system being followed is:
+```
+{
+    'POINT_WIN': 1,
+    'GAME_WIN': 1,
+    'ACE_SERVE': 1,
+    'SET_WIN': 1,
+    'MATCH_WIN': 1
+}
+```
+This map is presnet in `sample_tennis_game_runner.py`
