@@ -34,6 +34,6 @@ if __name__ == '__main__':
         atp_ranking = -1,
         credits_needed = -1
     )
-    players = [p1, p2, p3, p4]
+    players = [p1, p2]
     game = Game(players)
     game.run_round()

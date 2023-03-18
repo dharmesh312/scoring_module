@@ -1,3 +1,4 @@
+import random
 from typing import List
 
 from entities.player import Player
@@ -29,13 +30,24 @@ class Game:
         players_advancing_to_next_round = []
         for pool in round_pools:
             winner, loser = self.play_game(pool)
+            players_advancing_to_next_round.append(winner)
+        self.current_players_in_game = players_advancing_to_next_round
 
     def play_game(self, pool: tuple)-> (Player, Player):
         if len(pool) < 2:
             raise Exception("Cannot play game as there are more than two players")
         p1:Player = pool[0]
         p2:Player = pool[1]
-        tennis_game = TennisGame(p1.name, p2.name)
+        tennis_game = TennisGame(p1, p2)
+        log.info('Starting the game')
+        while not tennis_game.is_game_ended():
+            rand = random.randint(0, 1)
+            if rand == 0:
+                tennis_game.player1_scores()
+            elif rand == 1:
+                tennis_game.player2_scores()
+        return tennis_game.winner, tennis_game.loser
+
 
 
 
