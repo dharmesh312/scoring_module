@@ -8,8 +8,10 @@ log = Log.getLogger(__name__)
 
 class Game:
     def __init__(self, players: List[Player]) :
+        self.round_id = 0
         self.players = players
         self.current_players_in_game = players
+        self.tournament_event = {}
 
     def _draw_pools(self, players: List[Player]) -> List[tuple]:
         if len(players)%2 != 0:
@@ -25,12 +27,16 @@ class Game:
         return player_draws
 
     def run_round(self):
+        self.round_id += 1
         round_pools = self._draw_pools(self.current_players_in_game)
         log.info(f"Starting round with draw pool: {round_pools}")
         players_advancing_to_next_round = []
+        self.match_count = 1
         for pool in round_pools:
             winner, loser = self.play_game(pool)
             players_advancing_to_next_round.append(winner)
+            self.tournament_event[f'R-{self.round_id}-M-{self.match_count}'] = {'winner': winner.name, 'loser': loser.name}
+            self.match_count += 1
         self.current_players_in_game = players_advancing_to_next_round
 
     def play_game(self, pool: tuple)-> (Player, Player):

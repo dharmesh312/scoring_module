@@ -131,7 +131,7 @@ class TennisGame:
 
     def check_for_game_finish(self):
             if self.match_score[1] >= 2 or self.match_score[2] >= 2:
-                if self.match_score[1] - self.match_score[2] == 2:
+                if self.match_score[1] - self.match_score[2] == 2 or self.match_score[1] == 3:
                     self.count_fanatasy_score_for_player_for_event(player=self.player1, event='MATCH_WIN')
                     self.winner = self.player1
                     self.loser = self.player2
@@ -139,7 +139,7 @@ class TennisGame:
                     log.info(
                         f"p1: {self.player1.name} p2 : {self.player2.name} ms : {self.match_score}, ss: {self.set_score} gs : {self.player1_score} - {self.player2_score}")
                     self.match_ended = True
-                elif self.match_score[2] - self.match_score[1] == 2:
+                elif self.match_score[2] - self.match_score[1] == 2 or self.match_score[2] == 3:
                     self.count_fanatasy_score_for_player_for_event(player=self.player2, event='MATCH_WIN')
                     self.winner = self.player2
                     self.loser = self.player1
