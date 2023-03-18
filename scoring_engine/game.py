@@ -9,12 +9,6 @@ class Game:
     def __init__(self, players: List[Player]) :
         self.players = players
         self.current_players_in_game = players
-        self.score_map = {
-            'POINT_WIN': 1,
-            'GAME_WIN': 1,
-            'ACE_SERVE': 1,
-            'SET_WIN': 1
-        }
 
     def _draw_pools(self, players: List[Player]) -> List[tuple]:
         if len(players)%2 != 0:
