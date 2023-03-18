@@ -35,7 +35,7 @@ class Game:
         for pool in round_pools:
             winner, loser = self.play_game(pool)
             players_advancing_to_next_round.append(winner)
-            self.tournament_event[f'R-{self.round_id}-M-{self.match_count}'] = {'winner': winner.name, 'loser': loser.name}
+            self.tournament_event[f'Round-{self.round_id}-Match-{self.match_count}'] = {'winner': winner.name, 'loser': loser.name}
             self.match_count += 1
         self.current_players_in_game = players_advancing_to_next_round
 

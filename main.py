@@ -10,7 +10,7 @@ log = Log.getLogger(__name__)
 def write_players_score(game):
     file1 = open("player_score.txt", "w")
     file2 = open("player_events.txt", "w")
-    file3 = open("tournamet_evetns.txt", "w")
+    file3 = open("tournamet_events.txt", "w")
     player_score = {}
     player_events = {}
     for player in game.players:
