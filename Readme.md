@@ -13,3 +13,15 @@ To run the code:
    2. player_score.txt: This file contain all the players and their scores.
    3. torurnamet_events.txt: This file contains infomration about the rounds and the matches and winner and loser status of the match.
 
+4. Players information is represented by Player class, to define a new player:
+ `
+```
+p1 = Player(
+        name='nadal',
+        total_score = 0,
+        score_array = [],
+        atp_ranking = -1,
+        credits_needed = -1
+    )
+```
+Add a object like this to add a player in `main.py.`
